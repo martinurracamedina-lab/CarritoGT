@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarritoGT | Tienda</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        #productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .producto {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #00000012;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .producto img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .producto h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .precio {
+            font-size: 20px;
+            font-weight: bold;
+            color: #172554;
+        }
+
+        button {
+            border: none;
+            border-radius: 7px;
+            padding: 11px;
+            cursor: pointer;
+            font-size: 15px;
+            background: #1d4ed8;
+            color: white;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        .eliminar {
+            background: #b91c1c;
+        }
+
+        .eliminar:hover {
+            background: #991b1b;
+        }
+
+        #carrito {
+            margin-top: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .item-carrito {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .mensaje {
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        @media (max-width: 500px) {
+            .item-carrito {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CarritoGT</h1>
+        <p>Tu tienda en línea</p>
+    </header>
+
+    <main>
+        <h2>Nuestros productos</h2>
+        <div id="productos">Cargando productos...</div>
+
+        <p id="mensaje" class="mensaje" role="status"></p>
+
+        <section id="carrito">
+            <h2>Mi carrito</h2>
+            <div id="items-carrito">Cargando carrito...</div>
+            <h3 id="total">Total: Q0.00</h3>
+        </section>
+    </main>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
