@@ -67,4 +67,33 @@ La API se comunica con la base de datos MariaDB y devuelve respuestas en formato
 
 Las pruebas se realizaron localmente utilizando curl. Para completar la evidencia del proyecto, se recomienda conservar capturas de pantalla de las solicitudes y sus respuestas.
 
+## Pruebas automatizadas con Maven
 
+Se utiliza JUnit 5 junto con Spring Boot Test para ejecutar pruebas automatizadas del proyecto.
+
+### Prueba 1. Inicio de la aplicación
+
+- **Método:** `contextLoads()`
+- **Objetivo:** comprobar que el contexto de Spring Boot pueda iniciar.
+- **Resultado esperado:** la aplicación de prueba inicia sin errores.
+
+### Prueba 2. Consulta de productos
+
+- **Método:** `debeConsultarProductos()`
+- **Endpoint:** `GET /api/productos`
+- **Objetivo:** comprobar que la API responda correctamente al consultar los productos.
+- **Validaciones:** se verifica que el código HTTP sea `200` y que el cuerpo de la respuesta no sea nulo.
+
+### Ejecución
+
+Para ejecutar las pruebas automatizadas desde la raíz del proyecto, se utiliza:
+
+```bash
+./mvnw test
+```
+
+El resultado debe revisarse en la salida de Maven. Una ejecución exitosa muestra `BUILD SUCCESS` y cero fallos o errores.
+
+### Observación
+
+Estas pruebas comprueban el inicio de la aplicación y la respuesta del endpoint de productos. Las operaciones del carrito requieren pruebas adicionales para validar sus distintos comportamientos.
